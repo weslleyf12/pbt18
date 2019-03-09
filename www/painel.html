@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript">
+        app.initialize();
+	</script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<style>
+	input {
+    border: 1px solid #595959;
+    border-radius:3.5px;
+    display:inline-block;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:13px;
+    padding:4.5px 8.5px;
+    text-decoration:none;
+    background:#f0f0f0;
+    text-shadow:0px 1px 0px #528009;
+	}
+	input#camera {
+    border:none;
+	}
+	</style>
+	<title>Classificador de Imagens</title>
+</head>
+
+<body onload="verifica()">
+<div id="telaUsuario" class="app">
+	<h1>PBT18</h1>
+	<div>
+		<p><input type="button" id="camera" class="camera btn btn-primary" value="Aplicar" onclick="changeThings()"/></p>
+		<form name="form" id="formURL">
+			<fieldset>
+				<legend></legend>
+				<div class="formulario">
+					<p>URL: </p> <input class="buttonHalf" type="text" name="cURL" id="_URL" size="28"
+										placeholder="Path to server" maxlength="80"/>
+					<p>Frequency: </p> <input class="buttonHalf" type="text" id="frequency" placeholder="Time between pictures"
+											  maxlength="4"/>
+					<p></p><input type="button" class="btn btn-primary" value="Restore Defaults" id="restoreD" onclick="document.getElementById('_URL').value = '';
+					document.getElementById('frequency').value = ''; restaurar()"/>
+					<input id="telaDoneMessage" type="image" src=img/done-message.png class="hidden tela-done-message">
+					<p></p><input type="radio" name="opcoes" id="alternativa1" value="op1"/> <label for="alternativa1">Envio de foto ininterruptamente ao servidor</label>
+					<p></p><input type="radio" name="opcoes" id="alternativa2" value="op2"/> <label for="alternativa2">Salvar no dispositivo para posterior envio</label>
+				</div>
+			</fieldset>
+		</form>
+		<p><input type="image" src=img/mobile_menu.png class="telaLista" onclick="lista()"></p>
+	</div>
+</div>
+<div id="telaHelp" class="message hidden">
+	Este aplicativo tem como finalidade o envio de imagens a um servidor, para posteriores classificações.
+	No campo para se especificar uma URL, utiliza-se a URL do servidor que leve até algum arquivo .php ao
+	qual encaminhará a imagem para um diretório específico. Ex: "54.1.0.105:80/teste/index.php".
+	<p>O campo onde especifica-se a frequência serve para estabelecer de quanto em quantos segundos
+		a foto será tirada e enviada. Não recomenda-se utilizar uma frequência pequena, pois pode compro
+		meter o desempenho do aplicativo.</p>
+	<input type="image" src=img/close-150192_640.png onclick="closeTelaHelp()" class="buttonClose">
+</div>
+<div id="telaListagem" class="hidden lista">
+	<input id="chamaHelp" type="image" src=img/blue-help-button-icon-24517.png class="botoesLista1" onclick="help()">
+	<input id="voltarTelaLogin" type="image" src=img/icon-1976100_640.png class="botoesLista2" onclick="logout(2)">
+	<input id="volta" type="image" src=img/blue-return-button-png-0.png class="botoesLista3" onclick="voltar()">
+</div>
+<script type=text/javascript>
+	function verifica() {
+		var value = window.localStorage.getItem("key");
+		if(value != 'yes') {
+			window.location.href = "index.html";
+		} else {}
+	}
+</script>
+</body>
+</html>
