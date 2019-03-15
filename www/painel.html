@@ -34,7 +34,7 @@
 	<title>Classificador de Imagens</title>
 </head>
 
-<body onload="verifica()">
+<body onload="verificaAutenticacao()">
 <div id="telaUsuario" class="app">
 	<h1>PBT18</h1>
 	<div>
@@ -70,15 +70,7 @@
 <div id="telaListagem" class="hidden lista">
 	<input id="chamaHelp" type="image" src=img/blue-help-button-icon-24517.png class="botoesLista1" onclick="help()">
 	<input id="voltarTelaLogin" type="image" src=img/icon-1976100_640.png class="botoesLista2" onclick="logout(2)">
-	<input id="volta" type="image" src=img/blue-return-button-png-0.png class="botoesLista3" onclick="voltar()">
+	<input id="volta" type="image" src=img/back-2935454_6401.png class="botoesLista3" onclick="voltar()">
 </div>
-<script type=text/javascript>
-	function verifica() {
-		var value = window.localStorage.getItem("key");
-		if(value != 'yes') {
-			window.location.href = "index.html";
-		} else {}
-	}
-</script>
 </body>
 </html>

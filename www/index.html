@@ -28,13 +28,12 @@
                             <input name="usuario" id="user" class="input is-large" placeholder="Seu usuário" autofocus="">
                         </div>
                     </div>
-
                     <div class="field">
                         <div class="control">
                             <input name="senha" id="pass" class="input is-large" type="password" placeholder="Sua senha">
                         </div>
                     </div>
-                    <button class="btn btn-primary loginsIds is-full-width">Entrar</button>
+                    <button onclick="salvarUsername()" class="btn btn-primary loginsIds is-full-width">Entrar</button>
                     <br>
                     <a href="" style="padding: 8px; font-size: 15px">Registrar</a>
                     <a href="" style="padding:8px; font-size: 15px">Recuperar</a>
@@ -49,8 +48,8 @@
 <script type=text/javascript>
     $(document).ready(function() {
         $("#form").submit(function() {
-            var usuario = $("#user").val();
-            var senha = $("#pass").val();
+            let usuario = $("#user").val();
+            let senha = $("#pass").val();
             if (usuario == "" && senha == ""){
             } else {
                 tela_carregamento();
@@ -86,6 +85,11 @@
             return false;
         });
     });
+</script>
+<script>
+    if(document.getElementById('user').value == '' || document.getElementById('user').value == null) {
+        document.getElementById('user').value = localStorage.getItem('userValue');
+    }
 </script>
 </body>
 </html>

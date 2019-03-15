@@ -109,6 +109,13 @@ body {
     color: white;
 }
 
+.header {
+    position:absolute;
+    top: 0%;
+    width: 100%;
+    height: 15%;
+}
+
 #telaUsuario {
     background-image:url(../img/logo-ifpe-pequeno.png), url(../img/box-1472804_640.png);
     background-position: 50% 0%, center;
@@ -132,9 +139,7 @@ body {
     margin-top: 2%;
 }
 
-.stopCamera {background-color: transparent;position:absolute;width: 60px;height: 60px;top:90%;left: 80%;margin-top: -30px;margin-left: -30px}
-
-.startCamera {background-color: transparent;position:absolute;width: 40px;height: 40px;top:90%;left: 43%;margin-top: -20px;margin-left: -20px}
+.stopCamera {background-color: transparent;position:absolute;width: 60px;height: 60px;top:90%;left: 50%;margin-top: -30px;margin-left: -30px}
 
 .img-user {
     width: 30%;
@@ -210,6 +215,7 @@ h1 {
     border-top-style: none;
     border-left-style: none;
     border-right-style: none;
+    margin-bottom: 90px;
 }
 
 form {
@@ -252,26 +258,34 @@ div {
     text-align: justify;
 }
 
-.is-full-width {position: relative; width: 96%; height:40px;}
+.is-full-width {position: relative; width: 100%; height:40px}
 
-.left-side {position:absolute;width: 48%;height: 15%;margin-left:50%;background-color: transparent;border:none;font-size: 130%;}
+.left-side {position:absolute;width:50%;height:28.53%;background-color: transparent;border:2px solid #595959;font-size:130%; right: 0%; border-radius: 0px;}
 
-.right-side {position:absolute;width: 48%;height: 15%;margin:0;border: none;background-color: transparent;font-size: 130%;}
+.right-side {position:absolute;width:50%;height:28.53%;border:2px solid #595959;background-color: transparent;font-size:130%; margin-left:0; border-radius: 0px;}
 
-.first {position:absolute; top: 20%;}
+.first {top: 14.8%; border-top-style: none;}
 
-.third {position:absolute; top: 80%;}
+.third {top: 71.4633%;}
 
-.second {position:absolute; top: 50%;}
-
-#telaBotoes {
-    background-image:url(../img/logo-ifpe-pequeno.png);
-    background-position: 50% 0%;
-    background-repeat: no-repeat;
-    background-size: 90px;
-    width: 100%;
-    height: 100%;
-    background-color: #f0f0f0;
-}
+.second {top: 43.133%;}
 
 .camera {position:absolute;top:85%;left: 50%;margin-top: -20px;margin-left: -20px;padding:10px;}
+
+#countdown {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  background-color: transparent;
+  top:25%;
+}
+
+#countdown-number {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #333;
+  height: 50%;
+  display: inline-block;
+  font-size: 150px;
+}

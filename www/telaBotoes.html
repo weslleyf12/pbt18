@@ -14,29 +14,26 @@
     <title>PBT18</title>
 </head>
 
-<body onload="verifica()">
-<div id="telaBotoes" style="position: absolute;">
-    <h1>PBT18</h1><br><br>
+<body onload="verifica()" style="background-color: #f0f0f0">
+<div id="telaBotoes">
+    <input type=image class='header' src=img/telaTeste1.png>
     <div>
-        <p><button class="right-side first" onclick="telaCamera()">Iniciar Uso</button></p>
-        <p><button class="right-side second">Calibrar câmera</button></p>
+        <p><button class="right-side first" onclick="window.localStorage.setItem('opt', '0'); telaCamera()">Iniciar Uso</button></p>
+        <p><button class="right-side second" onclick="window.localStorage.setItem('opt', '1'); telaCamera()">Calibrar câmera</button></p>
         <p><button class="right-side third" onclick="window.location.href = 'painel.html'">Configurações</button></p>
         <p><button class="left-side first">Indicadores</button></p>
         <p><button class="left-side second">Exportar dados</button></p>
         <p><button class="left-side third" onclick="logout(1)">Sair</button></p>
     </div>
 </div>
-
-<script type="text/javascript">
-        app.initialize();
-</script>
 <script type=text/javascript>
     function verifica() {
         var value = window.localStorage.getItem("key");
         if(value != 'yes') {
             window.location.href = "index.html";
         } else {}
-}
+        salvarUsername()
+    }
 </script>
 </body>
 </html>

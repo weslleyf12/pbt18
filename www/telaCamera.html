@@ -19,18 +19,29 @@
 	<title>Camera</title>
 </head>
 
-<body onload="verifica()">
+<body onload="verificacao()">
+
+<div id="countdown" class="hidden">
+  <div id="countdown-number"></div>
+</div>
 
 <div id="telaCamera">
-	<input id="startCamera" type="image" src=img/icons-842862_640.png onclick="loopPhoto()" class="startCamera">
-	<input id="stopCamera" type="image" src=img/blue-return-button-png-0.png onclick="window.location.href = 'telaBotoes.html'; stop()" class="stopCamera">
+	<input id="stopCamera" type="image" src=img/rewind-27431_640.png onclick="window.location.href = 'telaBotoes.html'; stop(); CameraPreview.stopCamera();" class="stopCamera">
 </div>
 <script type=text/javascript>
-	function verifica() {
-		var value = window.localStorage.getItem("key");
+	function verificacao() {
+		let value = window.localStorage.getItem("key");
 		if(value != 'yes') {
 			window.location.href = "index.html";
-		} else {}
+		} else {
+			if (window.localStorage.getItem('opt') == '0') { //var  opt é para ver se vai mostrar os segundos na tela ou nao, diferenciando calibrar camera e tirar a foto. Enquanto a variavel opcao é para diferenciar se vai ser salvo no dispositivo ou nao 
+				$('#countdown').removeClass('hidden')
+				countd()
+				window.setTimeout(function() {window.clearInterval(cameraCountdown)}, 5000)
+				window.setTimeout(function() {$('#countdown').addClass('hidden')}, 5000)
+				window.setTimeout(loopPhoto, 5000)
+			} else {}
+		}
 	}
 </script>
 <script type="text/javascript" src="cordova.js"></script>

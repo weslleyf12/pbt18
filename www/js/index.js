@@ -4,16 +4,23 @@ let defaults = new Object();
 defaults.URI = window.localStorage.getItem('URI')
 defaults.interval = window.localStorage.getItem('interval')
 
-var URL_descartada = '';
-var parar = null;
-var loop = null;
-var interrupt = 0; // to not start loopPhoto twice
-var firstPic = 0;  // just the first shot will alert of failure
+let URL_descartada = '';
+let parar = null;
+let loop = null;
+let interrupt = 0; // to not start loopPhoto twice
+let firstPic = 0;  // just the first shot will alert of failure
+let cameraCountDown = null;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
   document.getElementById("restoreD").addEventListener("click", changeDefaults);
+}
+
+function salvarUsername() {
+  if(document.getElementById('user').value != '' || document.getElementById('user').value != null) {
+    localStorage.setItem('userValue', document.getElementById('user').value)
+  }
 }
 
 function setConfig() {
@@ -53,12 +60,6 @@ function changeThings() {
   }
 }
 
-function telaCamera() {
-  window.location.href = 'telaCamera.html'
-  if (localStorage.getItem('opcao') == "op1") {prepareCamera()
-  } else {prepareCamera2()}
-}
-
 function verificaRadio() {
     const radios = document.getElementsByName('opcoes')
     for (let i = 0, length = radios.length; i < length; i++) {
@@ -67,26 +68,42 @@ function verificaRadio() {
     }
 }
 
+function verificaAutenticacao() {
+    var value = window.localStorage.getItem("key");
+    if(value != 'yes') {
+        window.location.href = "index.html";
+    } else {}
+} 
+
 function tela_carregamento() {
   $('#telaCarregamento').removeClass('hidden'); 
   $('#telaCarregamento').addClass('page-active');
 }
 
 function loopPhoto() {
-    interrupt ++;
-    if (interrupt == 1) {
-        if (window.localStorage.getItem('opcao') == "op1") {capturePhoto(); loop = window.setInterval(capturePhoto, defaults.interval);
-            } else {capturePhoto2(); loop = window.setInterval(capturePhoto2, defaults.interval);}
-    } else {}
+  interrupt ++;
+  if (interrupt == 1) {
+      if (window.localStorage.getItem('opcao') == "op1") {capturePhoto(); loop = window.setInterval(capturePhoto, defaults.interval);
+          } else {capturePhoto2(); loop = window.setInterval(capturePhoto2, defaults.interval);}
+  } else {}
 }
 
 function stop() {
-    window.clearInterval(loop); 
-    CameraPreview.stopCamera(); 
+  window.clearInterval(loop); 
+  CameraPreview.stopCamera(); 
 }
 
 function clearCache() {
-    navigator.camera.cleanup();
+  navigator.camera.cleanup();
+}
+
+function countd() {
+  let countdownNumberEl = document.getElementById('countdown-number');
+  let countdown = 5;
+
+  countdownNumberEl.textContent = countdown;
+
+  cameraCountdown = window.setInterval(function() {countdown = --countdown <= 0 ? 5 : countdown;countdownNumberEl.textContent = countdown;}, 1000);
 }
 
 function logout(option) {
@@ -134,7 +151,7 @@ function onCapturePhoto(fileURI) {
         firstPic = firstPic + 1;
         if (firstPic == 2) {
             alert("ERROR. Gallery option now." + error);
-            opcao = "op2";
+            window.localStorage.setItem('opcao', 'op2');
             stop();
             telaCamera();
             loopPhoto();
@@ -204,5 +221,12 @@ function help() {
   $('#telaHelp').addClass('page-active');
   voltar();
 }
+
+function telaCamera() {
+    window.location.href = 'telaCamera.html'
+    if (localStorage.getItem('opcao') == "op1") {prepareCamera()
+    } else {prepareCamera2()}
+}
+
 //Telas de Login, Usuário e de transição acima.
 //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
