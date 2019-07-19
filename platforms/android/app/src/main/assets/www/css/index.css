@@ -1,0 +1,293 @@
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+     /*   background-image:-webkit-gradient(linear, left bottom, left bottom, color-stop(0,#4dff4d),color-stop(0.6, #ffff1a)); */
+    background-attachment:fixed;
+    font-family: Lucida Sans Unicode;
+    font-size:25px
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:none;
+    width:100%;
+}
+
+*:focus{
+    outline:0;
+}
+
+/* Portrait layout (default) */
+.app {
+    position: fixed;
+    width: 100%; /* 350px 160px */
+    height: 100%;
+    overflow: auto;
+}
+
+.buttonClose {
+    background-color: transparent;
+    position:absolute;
+    width: 30px;
+    height: 30px;
+    top:0%;
+    left: 99%;
+    margin-top: -15px;
+    margin-left: -15px;
+    border: none;
+}
+
+.message {
+    position:absolute;
+    top: 55%;
+    left: 0.2%;
+    width: 85%;
+    border: 3px solid #25692A;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    padding: 4.5px;
+    text-indent: 10px;
+    font-weight:550;
+    font-family: Lucida Sans Unicode;
+    font-size:15px;
+}
+
+.lista {
+    position:absolute;
+    top: 0%;
+    right: 0%;
+    width: 50px;
+    height: 120px;
+}
+
+.botoesLista1 {
+    position:absolute;
+    width: 25px;
+    height: 35px;
+    top: 0%;
+    border: 2px solid#25692A;
+    border-radius: 2px;
+    border-bottom-style:none;
+}
+
+.botoesLista2 {
+    position:absolute;
+    width: 25px;
+    height: 40px;
+    top:33.3%;
+    border:none;
+    border: 2px solid#25692A;
+    border-radius: 2px;
+    border-top-style: none;
+}
+
+.botoesLista3 {
+     position:absolute;
+     width: 25px;
+     height: 40px;
+     top:66.6%;
+     border:none;
+     border: 2px solid#25692A;
+     border-radius: 2px;
+     border-top-style: none;
+}
+
+.btn {
+    width: auto;
+    padding: 7px 20px;
+    margin: 5px;
+    border: 0;
+    border-radius: 2px;
+}
+
+.btn-success {
+    background: #069040;
+    color:white;
+}
+
+.btn-primary {
+    background: #0383C5;
+    color: white;
+}
+
+.header {
+    position:absolute;
+    background-color: #f0f0f0;
+    top: 0%;
+    width: 100%;
+    height: 15%;
+}
+
+#telaUsuario {
+    background-image:url(../img/logo-ifpe-pequeno.png);
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    background-size: 90px;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+}
+
+#telaCarregamento {
+    z-index: 9999;
+    color:white;
+    background:rgba(1, 0, 1, 0.6);
+}
+
+.page-active{
+    display:block;
+}
+
+.notification-down {
+    margin-top: 2%;
+}
+
+.stopCamera {background-color: transparent;position:absolute;width: 60px;height: 60px;top:90%;left: 49%;margin-top: -30px;margin-left: -30px}
+
+.img-user {
+    width: 30%;
+    height: 30%;
+    margin-bottom: -5%;
+    margin-left: 35%;
+}
+
+.is-center {
+    padding: 10px 15px;
+    margin-top: 5%;
+    margin-bottom: -5%;
+}
+
+.loginsIds {
+    font-weight: 700;
+}
+
+.img-load {
+    position:absolute;
+    width: 100px;
+    height: 100px;
+    top:50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+}
+
+.hidden {
+    display:none;
+}
+
+.formulario {
+    padding: 10px;
+}
+
+.telaLista {
+    background-color: transparent;
+    position: fixed;
+    top: 1%;
+    right: 0%;
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+
+.tela-done-message {
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border:none;
+}
+
+.buttonHalf {
+    background-color: transparent;
+    font-weight: bold;
+    bottom: 50%;
+    position: relative;
+    width: 50%;
+}
+
+h1 {
+    font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+    font-size:20px;
+    font-weight:bold;
+    overflow:visible;
+    padding: 0px 5px 25px 3px;
+    text-align: left;
+    position: absolute;
+    border: 2px solid #595959;
+    width: 100%;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    margin-bottom: 90px;
+}
+
+form {
+    width:100%; /*355px */
+    height: 100%
+    margin: 0px;
+    padding: 30px 0px;
+}
+
+fieldset {
+    width:100%;
+    border:none;
+    padding: 10px 0px 0px 0px;
+
+}
+
+button {
+    border:1px solid #25692A;
+    border-radius:4px;
+    display:inline-block;
+    cursor:pointer;
+    font-family: Lucida Sans Unicode;
+    font-weight:550;
+    font-size:13px;
+    padding:4.5px 8.5px;
+    text-decoration:none;
+    border-color:#68b465;
+    background:#abd5aa;
+    text-shadow:0px 1px 0px #528009;
+    margin-bottom: -10px;
+    margin-left: 48%
+}
+
+p {
+    font-size:15px;
+    font-weight:550;
+}
+
+div {
+    text-align: justify;
+}
+
+.is-full-width {position: relative; width: 100%; height:40px}
+
+.left-side {position:absolute;width:50%;height:28.53%;background-color: transparent;border:2px solid #595959;font-size:130%; right: 0%; border-radius: 0px;}
+
+.right-side {position:absolute;width:50%;height:28.53%;border:2px solid #595959;background-color: transparent;font-size:130%; margin-left:0; border-radius: 0px;}
+
+.first {top: 14.8%; border-top-style: none;}
+
+.third {top: 71.4633%;}
+
+.second {top: 43.133%;}
+
+.camera {position:absolute;top:90%;left: 50%;margin-top: -20px;margin-left: -20px;padding:10px;}
+
+#countdown {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  background-color: transparent;
+  top:25%;
+}
+
+#countdown-number {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #333;
+  height: 50%;
+  display: inline-block;
+  font-size: 150px;
+}

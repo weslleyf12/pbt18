@@ -1,0 +1,64 @@
+{
+  "_from": "git+https://github.com/heigeo/cordova-plugin-tensorflow.git",
+  "_id": "cordova-plugin-tensorflow@0.0.1",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-plugin-tensorflow",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/heigeo/cordova-plugin-tensorflow",
+    "rawSpec": "https://github.com/heigeo/cordova-plugin-tensorflow",
+    "saveSpec": "git+https://github.com/heigeo/cordova-plugin-tensorflow.git",
+    "fetchSpec": "https://github.com/heigeo/cordova-plugin-tensorflow.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/heigeo/cordova-plugin-tensorflow.git#9c8b74c81a642b1381be517de8f22e0caa649180",
+  "_spec": "https://github.com/heigeo/cordova-plugin-tensorflow",
+  "_where": "C:\\Users\\Weslley\\Documents\\Cordova\\pbt",
+  "author": {
+    "name": "Houston Engineering, Inc."
+  },
+  "bugs": {
+    "url": "https://github.com/heigeo/cordova-plugin-tensorflow/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-tensorflow",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "TensorFlow for Cordova",
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=5.1.0"
+    }
+  ],
+  "homepage": "https://github.com/heigeo/cordova-plugin-tensorflow#readme",
+  "keywords": [
+    "ai",
+    "inference",
+    "classification",
+    "imagerecognition",
+    "neuralnetworks",
+    "machinelearning",
+    "tensorflow",
+    "inception",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-tensorflow",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heigeo/cordova-plugin-tensorflow.git"
+  },
+  "version": "0.0.1"
+}

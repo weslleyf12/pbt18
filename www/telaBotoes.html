@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <title>PBT18</title>
+</head>
+
+<body onload="verifica()" style="background-color: #f0f0f0">
+<div id="telaBotoes">
+    <input type=image class='header' src=img/header-ifpe.png>
+    <div>
+        <p><button class="right-side first" onclick="window.localStorage.setItem('opt', '0'); telaCamera()">Iniciar uso</button></p>
+        <p><button class="right-side second" onclick="window.localStorage.setItem('opt', '1'); telaCamera()">Calibrar câmera</button></p>
+        <p><button class="right-side third" onclick="window.location.href = 'painel.html'">Configurações</button></p>
+        <p><button class="left-side first">Indicadores</button></p>
+        <p><button class="left-side second">Exportar dados</button></p>
+        <p><button class="left-side third" onclick="logout(1)">Sair</button></p>
+    </div>
+</div>
+
+<script type=text/javascript>
+    function verifica() {
+        var value = window.localStorage.getItem("key");
+        if(value != 'yes') {
+            window.location.href = "index.html";
+        } else {}
+        salvarUsername()
+    }
+</script>
+</body>
+</html>

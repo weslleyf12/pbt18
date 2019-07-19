@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PBT18</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+<div id="telaLogin" class="hero is-success is-fullheight">
+    <div class="hero-body">
+        <div class="container">
+            <div class="column is-4 is-offset-4">
+                <h3 class="title has-text-grey has-text-centered">Autenticação</h3>
+                <div class="box">
+                <form action="" id="form">
+                    <div id="notificacao" class="">
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <input name="usuario" id="user" class="input is-large" placeholder="Seu usuário" autofocus="">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <input name="senha" id="pass" class="input is-large" type="password" placeholder="Sua senha">
+                        </div>
+                    </div>
+                    <button onclick="salvarUsername()" class="btn btn-primary loginsIds is-full-width">Entrar</button>
+                    <br>
+                    <a href="" style="padding: 8px; font-size: 15px">Registrar</a>
+                    <a href="" style="padding:8px; font-size: 15px">Recuperar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="telaCarregamento" class="hidden">
+    <img src=img/Ball-1s-200px.svg class="img-load">
+</div>
+<script type=text/javascript>
+    /*$(document).ready(function() {
+        $("#form").submit(function() {
+            let usuario = $("#user").val();
+            let senha = $("#pass").val();
+            if (usuario == "" && senha == ""){
+            } else {
+                tela_carregamento();
+                $.ajax({
+                    url: 'http://10.0.0.2:80/a/login.php',
+                    data: {usuario : usuario, senha : senha},
+                    type: 'post',
+                    dataType: 'html',
+                    })
+                    .done(function(retorno) {
+                        if(retorno == 1){
+                            $("#notificacao").addClass("is-danger");
+                            $("#notificacao").addClass("notification");
+                            $("#notificacao").addClass("notification-down");
+                            $('#telaCarregamento').removeClass('page-active'); 
+                            $('#telaCarregamento').addClass('hidden');
+                            $("#notificacao").html("<p>Usuário ou senha inválidos.</p>");
+                            window.localStorage.setItem("key", "no");
+                        } else {
+                            $("#notificacao").removeClass("notification");
+                            $("#notificacao").removeClass("is-danger");
+                            $("#notificacao").html("");                    
+                            window.location.href = "telaBotoes.html";
+                            window.localStorage.setItem("key", "yes");
+                        }
+                    })
+                    .fail(function(jqXHR, textStatus, retorno){
+                        alert('Erro: ' + retorno);
+                        $('#telaCarregamento').removeClass('page-active'); 
+                        $('#telaCarregamento').addClass('hidden');
+                    })
+            }
+            return false;
+        });
+    });*/
+    window.location.href = "telaBotoes.html";
+    window.localStorage.setItem("key", "yes");
+</script>
+<script>
+    if(document.getElementById('user').value == '' || document.getElementById('user').value == null) {
+        document.getElementById('user').value = localStorage.getItem('userValue');
+    }
+</script>
+</body>
+</html>
