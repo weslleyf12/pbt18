@@ -354,13 +354,24 @@ function enviarFoto(fileURI) {
 
 // funcao lista, que chama help e outros
 function lista() {
+  painel.porta = "aberto"
   $('#telaListagem').removeClass('hidden');
   $('#telaListagem').addClass('page-active');
 }
 
+function painel() {
+  this.porta = fechada
+}
+
+new painel
+
 function voltar() {
-  $('#telaListagem').addClass('hidden');
-  $('#telaListagem').removeClass('page-active');
+  if (painel.porta == 'aberto') {
+    painel.porta = 'desbloqueada'
+  } else if (painel.porta == 'desbloqueada') {
+    $('#telaListagem').addClass('hidden');
+    $('#telaListagem').removeClass('page-active');
+  } else {}
 }
 
 function closeTelaHelp() {
